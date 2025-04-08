@@ -1,0 +1,8 @@
+{
+    "key_field": "alpha_3",
+    "private": false,
+    "write_restricted": true,
+    "validation_records": [],
+    "version_type": "Semantic",
+    "dataset_type": "Reference"
+}
