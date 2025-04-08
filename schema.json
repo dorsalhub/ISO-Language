@@ -1,0 +1,81 @@
+{
+    "title": "Language Names: ISO 639",
+    "type": "object",
+    "description": "ISO 639 language reference dataset",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "ISO 639 name of the language",
+            "maxLength": 96,
+            "lookup": true
+        },
+        "alpha_3": {
+            "type": "string",
+            "description": "3-letter ISO 639-3 language code",
+            "pattern": "^[a-z]{3}$",
+            "lookup": true
+        },
+        "alpha_2": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "2-letter ISO 639-1 language code",
+            "pattern": "^[a-z]{2}$",
+            "hidden": true
+        },
+        "alpha_2_b": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "legacy 3-letter ISO 639-2/B (Bibliographic) language code derived from English name of language",
+            "pattern": "^[a-z]{3}$",
+            "hidden": true
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "Ancient",
+                "Constructed",
+                "Extinct",
+                "Historical",
+                "Living"
+            ]
+        },
+        "scope": {
+            "type": "string",
+            "enum": [
+                "Individual",
+                "Macro"
+            ]
+        },
+        "other_alias": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "Other names for the language.",
+            "lookup": true,
+            "items": {
+                "type": "string",
+                "description": "Language name.",
+                "maxlength": 96
+            }
+        },
+        "lookup_rank": {
+            "type": "integer",
+            "description": "record lookup rank."
+        }
+    },
+    "required": [
+        "alpha_3",
+        "alpha_2",
+        "alpha_2_b",
+        "name",
+        "type",
+        "scope",
+        "other_alias"
+    ],
+    "additionalProperties": false
+}
